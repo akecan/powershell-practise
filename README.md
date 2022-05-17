@@ -47,10 +47,10 @@ Pored navedenog, važe i sledeća pravila:
 
 Fajl `<mb>_partije.json` sadrži listu svih partija u koje organizacija sa matičnim brojem MB ima uvid kao i listu njenih sopstvenih partija (predstavlja indeks partija organizacije):
 
-```json
+```
 {
-    "MB": [ "partija11", "partija12", ... "partija1N"],
-    "MBX": [ "partijaX1", "partijaX2", ... "partijaXM"],
+    "MB": [ "partija11", "partija12", ..., "partija1N"],
+    "MBX": [ "partijaX1", "partijaX2", ..., "partijaXM"],
     ...
     "MBY": [ "partijaY1", ..., "partijaYJ" ]
 }
