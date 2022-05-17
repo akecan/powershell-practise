@@ -100,6 +100,8 @@ partijaN.txt
 
 ## Primer
 
+U sledećem primeru prikazano je zbog konzciznosti samo nekoliko datuma. Banka svakako čuva podatke 2 meseca.
+
 ```
 izvodi/
   08926/
