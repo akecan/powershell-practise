@@ -172,21 +172,21 @@ Fajl: `08926_partije.json`
 U ovom primeru su prikazane 3 organizacije, sa MB `08926`, `10523` i `12506`. Organizacija sa MB `08926` ima svoje partije `0000000026640`, `0000001916740` i dat joj je uvid u 4 partije organizacije `10523`. U slučaju ove organizacije, postoje 3 KDI za tri navedena datuma sa sledećim sadržajem:
 
 ```
-2022-03-03/08926_sve-partije.zip
+izvodi/08926/2022-03-03/08926_sve-partije.zip
   0000000026640.pdf
   0000000026640.json
   0000000026640.txt
   0000001916740.pdf
   0000001916740.json
   0000001916740.txt
-2022-02-28/08926_sve-partije.zip
+izvodi/08926/2022-02-28/08926_sve-partije.zip
   0000001916740.pdf
   0000001916740.json
   0000001916740.txt
   2340731241843.pdf
   2340731241843.txt
   2340731241843.json
-2022-02-12/08926_sve-partije.zip
+izvodi/08926/2022-02-12/08926_sve-partije.zip
   0000000026640.pdf
   0000000026640.json
   0000000026640.txt
