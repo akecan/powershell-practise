@@ -31,6 +31,7 @@ izvodi/
         ...
     datum12/
         partijaX.txt.zip
+        ...
     MB1_partije.json
   MB2/
     datum21/
