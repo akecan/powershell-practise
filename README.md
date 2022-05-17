@@ -171,7 +171,7 @@ Fajl: `08926_partije.json`
 }
 ```
 
-U ovom primeru su prikazane 3 organizacije, sa MB `08926`, `10523` i `12506`. Organizacija sa MB `08926` ima svoje partije `0000000026640`, `0000001916740` i dat joj je uvid u 4 partije organizacije `10523`. U slučaju ove organizacije, postoje 3 KDI za tri navedena datuma sa sledećim sadržajem:
+U ovom primeru su prikazane 3 organizacije, sa MB `08926`, `10523` i `12506`. Organizacija sa MB `08926` ima svoje partije `0000000026640`, `0000001916740` i dat joj je uvid u 4 partije organizacije `10523`. U slučaju ove organizacije, rezultat zadatka su 3 KDI za tri navedena datuma sa sledećim sadržajem:
 
 ```
 izvodi/08926/2022-03-03/08926_sve-partije.zip
