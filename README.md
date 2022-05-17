@@ -100,7 +100,7 @@ partijaN.txt
 
 ## Primer
 
-U sledećem primeru prikazano je zbog konzciznosti samo nekoliko datuma. Banka svakako čuva podatke 2 meseca.
+U sledećem primeru prikazano je zbog konzciznosti samo nekoliko datuma, inače, ne postoji datum koji je stariji od 2 meseca.
 
 ```
 izvodi/
