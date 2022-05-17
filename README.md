@@ -2,7 +2,7 @@
 
 ## Kontekst
 
-Banka vodi račune više različitih organizacija. Svaka organizacija može imati više računa. Banka ima obavezu da generiše dnevne izvode za sve račune i da ih služi za download krajnjim korisnicima. Na kraju svakog dana, servis banke generiše dnevni izvod za sve račune koje se u njoj vode i kopira ih u određeni folder definisane strukture gde ih čuva najviše 2 meseca i služi putem Nginx web servera.
+Banka vodi račune više različitih organizacija. Svaka organizacija može imati više računa. Banka ima obavezu da generiše dnevne izvode za sve račune i da ih služi za download krajnjim korisnicima. Na kraju svakog dana, servis banke generiše dnevni izvod za sve račune koji se u njoj vode i kopira ih u određeni folder definisane strukture gde ih čuva najviše 2 meseca i služi putem Nginx web servera.
 
 Račun organizacije je formata `<id-banke>-<partija>-<kontrolni-broj>`, npr. `840-0000000001620-53`. Svaki račun pripada tačno jednoj organizaciji, međutim neke organizacije mogu imati uvid u račune koje im ne pripadaju.
 
