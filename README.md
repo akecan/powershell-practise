@@ -89,7 +89,7 @@ partijaN.txt
 ## Pretpostavke
 
 1. Postoji CLI zip alat u folderu koji se nalazi u `PATH` env. varijabli
-1. Alat/skript se izvršava na lokalnoj mašini i ima read/write prava pristupa root folderu izvoda
+1. Alat/skript se izvršava na Linux serveru gde se nalaze izvodi i ima read/write prava pristupa root folderu izvoda
     1. Dizajniran je za upotrebu putem cron job-a
 1. Instaliran je pwsh i podešen bez ikakvih ograničenja
 
