@@ -68,7 +68,7 @@ Indeks lista organizacije i niz partija koje im pripadaju (nalaze se u njihovom 
 
 ## Zadatak
 
-Za svaku organizaciju, na bilo kakav način, kreirati novi **kompletan dnevni izvod** (KDI) koji sadrži sve dnevne izvode za konkretni datum. KDI sadrži sve partija u koje organizacija ima uvid, i imali su aktivnost tog dana:
+Za svaku organizaciju, na bilo kakav način, kreirati novi **kompletan dnevni izvod** (KDI) koji sadrži sve dnevne izvode za konkretni datum. KDI sadrži sve sopstvene partije organizacije kao i "tuđe partije" u koje ta organizacija ima uvid, a imali su aktivnost tog dana:
 
 **Fajl**: `MB_sve-partije.zip`:
 ```
