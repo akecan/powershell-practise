@@ -80,8 +80,11 @@ partijaN.txt
 
 1. Za organizaciju MB i datum, izvod se nalazi na putanji `mb/datum/mb_sve-partije.zip`
 1. Arhiva sadrži sve partije koje su imale aktivnost, ukoliko postoje za taj dan, inače se ne pravi
-1. Obezbediti idempotentnost - ponavljanje procesa bilo kada ne pravi razliku ako nije bilo izmena, prekidanje operacije usred posla i ponovno pokretanje će nastaviti dalje obradu,  i obrisani KDI će biti rekreiran na ponovnom pokretanju.
-1. Kritično je obezbediti da se greškom ne upakuju partije u koje organizacija nema uvid u njen KDI.
+1. Obezbediti idempotentnost 
+    1. Ponavljanje procesa bilo kada ne pravi razliku ako nije bilo promena fajl sistema
+    2. Prekidanje operacije usred posla i ponovno pokretanje će nastaviti dalje obradu
+    3. Obrisani KDI će biti rekreiran na ponovnom pokretanju
+3. **Kritično je obezbediti da se greškom u KDI ne upakuju partije u koje organizacija nema uvid**
 
 ## Pretpostavke
 
