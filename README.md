@@ -193,3 +193,5 @@ izvodi/08926/2022-02-12/08926_sve-partije.zip
   0000000026640.pdf
   0000000026640.txt
 ```
+
+Nakon što je operacija završena, svaka organizacija ima KDI za svaki dan, sem ako tog dana nije bilo aktivnosti. 
