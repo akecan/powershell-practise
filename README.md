@@ -95,7 +95,7 @@ partijaN.txt
 
 ## Dodatni zadaci
 
-1. Napisati `README.md` o svrsi, funkcionalnostima, napomenama itd. (ciljna grupa IT)
+1. Napisati `README.md` o svrsi, funkcionalnostima, opisom parametara, preduslova, napomenama itd. (ciljna grupa IT)
 1. Alat/skripta proizvodi detaljni log sprovedenih operacija
 
 ## Primer
