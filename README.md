@@ -46,6 +46,8 @@ Pored navedenog, važe i sledeća pravila:
 1. Folder za datum ne mora da postoji ako nijedna partija koja pripada datoj organizaciji nije imala aktivnost tog dana
 1. Folder organizacije ne mora da postoji ako nije bilo aktivnosti nijedne partije te organizacije u protekla 2 meseca
 
+### Struktura indeksa partija
+
 Fajl `<mb>_partije.json` sadrži listu svih partija u koje organizacija sa matičnim brojem MB ima uvid kao i listu njenih sopstvenih partija (predstavlja indeks partija organizacije):
 
 ```
