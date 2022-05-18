@@ -82,7 +82,7 @@ partijaN.pdf
 ```
 
 1. Za organizaciju MB i datum, izvod se nalazi na putanji `mb/datum/mb_sve-partije.zip`
-1. Arhiva sadrži sve partije koje su imale aktivnost, ukoliko postoje za taj dan, inače se ne pravi
+1. Arhiva sadrži sve formate partija koje su imale aktivnost, ukoliko postoje za taj dan, inače se ne pravi
 1. Obezbediti idempotentnost 
     1. Ponavljanje procesa bilo kada ne pravi razliku ako nije bilo promena fajl sistema
     2. Prekidanje operacije usred posla i ponovno pokretanje će nastaviti dalje obradu
