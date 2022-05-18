@@ -11,4 +11,4 @@ Kandidati kojima je dodeljen zadatak opisan u [funkcionalnom zahtevu](README.md)
 ## Napomene
 
 * Bilo kakva pitanja, sugestije ili zahteve za pojašnjenjem neophodno je priložiti isključivo preko **Issues** projektne sekcije dodeljenog zadatka.
-* Ukoliko je lični projekat na GitHub privatnog tipa (_private repository_), mora pozvati člana KnowIT na njega, inače neće dobiti notifikaciju.
+* Ukoliko je lični projekat na GitHub privatnog tipa (_private repository_), kandidat mora pozvati člana KnowIT na njega, inače on neće dobiti GitHub notifikaciju.
