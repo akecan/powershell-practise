@@ -75,10 +75,10 @@ Za svaku organizaciju, na bilo kakav način, kreirati novi **kompletan dnevni iz
 partija1.pdf
 partija1.txt
 partija1.json
-....
 partija2.pdf
 ...
 partijaN.pdf
+...
 ```
 
 1. Za organizaciju MB i datum, izvod se nalazi na putanji `mb/datum/mb_sve-partije.zip`
