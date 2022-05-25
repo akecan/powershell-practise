@@ -66,7 +66,7 @@ Indeks lista organizacije i niz partija koje im pripadaju (nalaze se u njihovom 
 1. svi ostali MB predstavljaju druge organizacije koje imaju račune u istoj banci
     1. lista partija u nizu su uvek **subset** partija koje pripadaju tim drugim organizacijama, ali su date prvoj organizaciji na uvid
 
-## Zadatak
+## Zadatak 1
 
 Za svaku organizaciju, na bilo kakav način, kreirati novi **kompletan dnevni izvod** (KDI) koji predstavlja ZIP arhivu koja sadrži otpakovane sve dnevne izvode za konkretni datum. KDI sadrži sve sopstvene partije organizacije kao i "tuđe partije" u koje ta organizacija ima uvid, a imali su aktivnost tog dana:
 
@@ -83,15 +83,20 @@ partijaN.pdf
 
 1. Za organizaciju MB i datum, izvod se nalazi na putanji `mb/datum/mb_sve-partije.zip`
 1. Arhiva sadrži sve formate svih partija koje su imale aktivnost, ukoliko postoje za taj dan, inače se ne pravi
-1. Obezbediti idempotentnost 
+1. Obezbediti idempotentnost
     1. Ponavljanje procesa bilo kada ne pravi razliku ako nije bilo promena fajl sistema
     2. Prekidanje operacije usred posla i ponovno pokretanje će nastaviti dalje obradu
     3. Obrisani KDI će biti rekreiran na ponovnom pokretanju
 3. **Kritično je obezbediti da se greškom u KDI ne upakuju partije u koje organizacija nema uvid**
 
+## Zadatak 2
+
+Napraviti skriptu koja generiše mock navedene šeme podataka. Skripta bi se koristila za testiranje rešenja zadatka.
+
+Skripta treba biti parametrizovana u što je većoj meri i da randomizuje podatke tako da oni zadovoljavaju navedene strukture.
+
 ## Pretpostavke
 
-1. Postoji CLI zip alat u folderu koji se nalazi u `PATH` env. varijabli
 1. Alat/skript se izvršava na Linux serveru gde se nalaze izvodi i ima read/write prava pristupa root folderu izvoda
     1. Dizajniran je za upotrebu putem cron job-a
 1. Instaliran je pwsh i podešen bez ikakvih ograničenja
@@ -197,4 +202,4 @@ izvodi/08926/2022-02-12/08926_sve-partije.zip
   0000000026640.txt
 ```
 
-Nakon što je operacija završena, svaka organizacija ima KDI za svaki dan, sem ako tog dana nije bilo aktivnosti. 
+Nakon što je operacija završena, svaka organizacija ima KDI za svaki dan, sem ako tog dana nije bilo aktivnosti.
