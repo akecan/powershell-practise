@@ -5,8 +5,8 @@ Kandidati kojima je dodeljen zadatak opisan u [funkcionalnom zahtevu](README.md)
 * Kandidat klonira KnowIT dodeljeni zadatak u svoje lokalno okruženje
 * Implementacija zadatka se obavlja u sopstvenom tempu i bez vremenskog ograničenja
 * Kandidat zatim kreira projekat na **svom ličnom** GitHub repozitorijumu
-* Završeni zadatak kandidat postavlja (Push) na projekat svog GitHub repozitorijuma
-* Kao poslednji korak neophodno je kreirati tiket **Review** u sopstvenom projektu u kome postoji _mention_ KnowIT člana tehničkog tima koji je kandidatu inicijalno dodelio zadatak
+* Završeni zadatak kandidat postavlja (Push) na projekat svog GitHub repozitorijuma u okviru feature brancha
+* Kao poslednji korak neophodno je kreirati PR na `main` branch u sopstvenom projektu gde se kao review-er dodeljuje član KnowIT član tehničkog tima koji je kandidatu inicijalno dodelio zadatak
 
 ## Napomene
 
