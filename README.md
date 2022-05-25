@@ -14,7 +14,7 @@ Račun organizacije je formata `<id-banke>-<partija>-<kontrolni-broj>`, npr. `84
     1. Partija ima tačno 13 numerika
     1. Format izvoda može biti PDF, JSON ili TXT i banka uvek pravi sve formate
     1. Zip arhiva sadrži tačno 1 fajl, po imenu `<partija>.<format>`
-1. U folderima se mogu naći drugi fajlovi i nije bitno koje su prirode, mogu se ignorisati
+1. Bilo gde u hijerarhiji se mogu naći drugi fajlovi i direktorijumi i nije bitno koje su prirode, mogu se ignorisati
 1. Folder svake organizacije sadrži fajl `<mb>_sve-partije.json` koji sadrži listu svih partija te organizacije koje banka vodi, kao i partije drugih organizacija u istoj banci u koja ova ima uvid i čiji izvodi se takođe nalaze u opisanoj strukturi foldera
 
 Kao drvo, struktura izgleda na sledeći način:
