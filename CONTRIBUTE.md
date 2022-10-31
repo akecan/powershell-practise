@@ -6,7 +6,7 @@ Kandidati kojima je dodeljen zadatak opisan u [funkcionalnom zahtevu](README.md)
 * Implementacija zadatka se obavlja u sopstvenom tempu i bez vremenskog ograničenja
 * Kandidat zatim kreira projekat na **svom ličnom** GitHub repozitorijumu
 * Završeni zadatak kandidat postavlja (Push) na projekat svog GitHub repozitorijuma u okviru feature brancha
-* Kao poslednji korak neophodno je kreirati PR na `main` branch u sopstvenom projektu gde se kao review-er dodeljuje član KnowIT član tehničkog tima koji je kandidatu inicijalno dodelio zadatak
+* Kao poslednji korak neophodno je kreirati PR na `main` branch u sopstvenom projektu gde se kao review-er dodeljuje član KnowIT tehničkog tima koji je kandidatu inicijalno dodelio zadatak
 
 ## Napomene
 
