@@ -1,27 +1,27 @@
 ﻿param (
-    [int]$num5DigitFolders = 5, # Zeljeni broj petocifrenih foldera
-    [int]$numDateFolders = 4,   # Zeljeni broj datum foldera unutar svakog petocifrenog foldera
-    [int]$numFilesPerFolder = 3 # Broj random fajlova koje treba ignorisati u svakom datum folderu
+    [int]$num5DigitFolders = 5, # Desired number of 5-digit folders
+    [int]$numDateFolders = 4,   # Desired number of date folders within each 5-digit folder
+    [int]$numFilesPerFolder = 3 # Number of random files to include in each date folder
 )
 
-# Kreiranje root foldera "izvodi"
+# Create the root folder "izvodi"
 New-Item -Path "izvodi" -ItemType Directory -Force
 
-# Globalni hashtable koji prati asocijaciju izmedju petocifrenih foldera i njihovih trinaestocifrenih brojeva
-$global:digitNumberMap = @{}
+# Hashtable to track the association between 5-digit folders and their 13-digit numbers
+$digitNumberMap = @{}
 
-# Ova funkcija ili vraca postojece trinaestocifrene brojeve za zadati petocifreni broj ili kreira nove ako ne postoje i ubacuje ih u hashtable 
+# Function to either return existing 13-digit numbers for a given 5-digit number or create new ones if they don't exist, and insert them into the hashtable
 function GetOrCreate13DigitNumbers {
     param ([string]$fiveDigitNumber)
-    if (-not $global:digitNumberMap.ContainsKey($fiveDigitNumber)) {
+    if (-not $digitNumberMap.ContainsKey($fiveDigitNumber)) {
         $firstNumber = Get-Random -Minimum 1000000000000 -Maximum 9999999999999
         $secondNumber = Get-Random -Minimum 1000000000000 -Maximum 9999999999999
-        $global:digitNumberMap[$fiveDigitNumber] = @($firstNumber, $secondNumber)
+        $digitNumberMap[$fiveDigitNumber] = @($firstNumber, $secondNumber)
     }
-    return $global:digitNumberMap[$fiveDigitNumber]
+    return $digitNumberMap[$fiveDigitNumber]
 }
 
-# Ova funkcija pravi PDF.ZIP, JSON.ZIP i TXT.ZIP fajlove za zadati trinaestocifreni broj
+# Function to create PDF.ZIP, JSON.ZIP, and TXT.ZIP files for a given 13-digit number
 function Create-FormattedFiles {
     param (
         [String]$path,
@@ -40,7 +40,7 @@ function Create-FormattedFiles {
     }
 }
 
-# ovaj deo skripte generise imena petocifrenih foldera i poziva funkciju GetOrCreate13DigitNumbers za svaki
+# Generate names for the 5-digit folders and call GetOrCreate13DigitNumbers function for each
 $allFolderNumbers = @()
 1..$num5DigitFolders | ForEach-Object {
     do {
@@ -50,28 +50,24 @@ $allFolderNumbers = @()
     GetOrCreate13DigitNumbers $randomNumber 
 }
 
-# Glavna petlja koja prolazi kroz svaki petocifreni broj i za njega pravi datum foldere, _sve-partije.json fajlove i random fajlove koje treba ignorisati
+# Main loop to iterate through each 5-digit folder, creating date folders and corresponding files
 foreach ($folderNumber in $allFolderNumbers) {
     $folderPath = Join-Path "izvodi" $folderNumber
     New-Item -Path $folderPath -ItemType Directory -Force
 
-    # Pravi datum foldere 
+    # Create date folders
     $dateFolderNames = @()
     for ($i = 0; $i -lt $numDateFolders; $i++) {
         $randomDate = Get-Random -Minimum (Get-Date).AddMonths(-2).Ticks -Maximum (Get-Date).Ticks
         $dateFolderName = (Get-Date $randomDate).ToString("yyyy-MM-dd")
+        $dateFolderPath = Join-Path $folderPath $dateFolderName
         if (-not $dateFolderNames.Contains($dateFolderName)) {
-            $dateFolderNames += $dateFolderName
-            $dateFolderPath = Join-Path $folderPath $dateFolderName
             New-Item -Path $dateFolderPath -ItemType Directory -Force
-            
-            #dodaje random fajlove
             1..$numFilesPerFolder | ForEach-Object {
                 $fileName = "file$_.txt"
                 New-Item -Path (Join-Path $dateFolderPath $fileName) -ItemType File
             }
 
-            # Poziva Create-FormattedFiles funkciju za svaki od trinaestocifrenih brojeva asociranih sa petoicfrenim folderom
             $ownNumbers = GetOrCreate13DigitNumbers $folderNumber
             foreach ($number in $ownNumbers) {
                 Create-FormattedFiles -path $dateFolderPath -number $number
@@ -79,21 +75,21 @@ foreach ($folderNumber in $allFolderNumbers) {
         }
     }
 
-    # Generise JSON kontent za folder u kojem se _sve-partije.json nalazi
+    # Generate JSON content for the folder where the _sve-partije.json file resides
     $jsonContent = New-Object PSObject
     $ownNumbers = GetOrCreate13DigitNumbers $folderNumber
     $jsonContent | Add-Member -MemberType NoteProperty -Name "$folderNumber" -Value $ownNumbers
 
-    # Generise JSON kontent za ostale foldere
+    # Generate JSON content for other folders
     foreach ($additionalNumber in $allFolderNumbers | Where-Object { $_ -ne $folderNumber }) {
         $additionalNumbers = GetOrCreate13DigitNumbers $additionalNumber
         $jsonContent | Add-Member -MemberType NoteProperty -Name "$additionalNumber" -Value $additionalNumbers
     }
 
-    # Konvertuje kontent u JSON i cuva u _sve-partije.json
+    # Convert content to JSON and save to _sve-partije.json
     $jsonString = $jsonContent | ConvertTo-Json -Depth 3
     $jsonFilePath = Join-Path $folderPath "${folderNumber}_sve-partije.json"
     Set-Content -Path $jsonFilePath -Value $jsonString
 }
 
-Write-Host "Struktura foldera i fajlova uspesno generisana."
+Write-Host "Folder and file structure successfully generated."
